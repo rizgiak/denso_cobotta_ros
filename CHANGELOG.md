@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## [1.2.4] -- 2021-01-20
+### Fixed
+- Overspeed ([#14](https://github.com/DENSORobot/denso_cobotta_ros/issues/14))
+  * Changed planning_adapters from `AddTimeParameterization` to `AddTimeOptimalParameterization`
+    in denso_cobotta_moveit_config/launch/ompl_planning_pipeline.launch.xml.
+
+### Changed
+- Support email address
+  * Changed to fa-support@denso-wave.com.
+
+
+## [1.2.3] -- 2020-07-30
+Melodic migration <http://wiki.ros.org/melodic/Migration>
+
+### Changed
+- ROS Melodic
+  * Added denso_cobotta_moveit_config/config/sensors_3d.yaml.
+  * Removed xacro option "--inorder".
+  * Removed parameter "kinematics_solver_attempts".
+  * Changed namespace of PID parameters.
+
+### Fixed
+- Removing Deprecated Exception Specifications from C++17
+
 ## [1.2.2] -- 2019-09-11
 ### Added
 - Gazebo
