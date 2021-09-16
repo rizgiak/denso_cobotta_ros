@@ -6,6 +6,8 @@
 	<!-- Parameters for gazebo simulation.
 		NOTE: These are roughly estimated values.
 	-->
+
+	<xacro:property name="scale" value ="0.8" />
 	<xacro:property name="joint_damping" value="0.001" />
 	<xacro:property name="joint_friction" value="0.61" />
 	<xacro:property name="base_mass" value="1.4" />
@@ -46,13 +48,13 @@
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/base_link.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/base_link.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</visual>
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/base_link.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/base_link.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</collision>
 		<xacro:inertia_macro radius="0.08" height="0.06" mass="${base_mass}">
@@ -64,13 +66,13 @@
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J1.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J1.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</visual>
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J1.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J1.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</collision>
 		<xacro:inertia_macro radius="0.06" height="0.1" mass="${J1_mass}">
@@ -101,13 +103,13 @@
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J2.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J2.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</visual>
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J2.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J2.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</collision>
 		<xacro:inertia_macro radius="0.03" height="0.12" mass="${J2_mass}">
@@ -118,7 +120,7 @@
 	<joint name="joint_2" type="revolute">
 		<parent link="J1"/>
 		<child link="J2"/>
-		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.180000" />
+		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 ${0.180000*scale}" />
 		<axis xyz="-0.000000 1.000000 -0.000000" />
 		<limit effort="10" lower="-1.047198" upper="1.745329" velocity="0.392175482923126" />
 		<dynamics damping="${joint_damping}" friction="${joint_friction}"/>
@@ -138,13 +140,13 @@
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J3.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J3.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</visual>
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J3.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J3.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</collision>
 		<xacro:inertia_macro radius="0.03" height="0.11" mass="${J3_mass}">
@@ -155,7 +157,7 @@
 	<joint name="joint_3" type="revolute">
 		<parent link="J2"/>
 		<child link="J3"/>
-		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.165000" />
+		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 ${0.165000*scale}" />
 		<axis xyz="-0.000000 1.000000 -0.000000" />
 		<limit effort="10" lower="0.3141593" upper="2.443461" velocity="0.725707902979242" />
 		<dynamics damping="${joint_damping}" friction="${joint_friction}"/>
@@ -175,13 +177,13 @@
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J4.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J4.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</visual>
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J4.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J4.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</collision>
 		<xacro:inertia_macro radius="0.03" height="0.11" mass="${J4_mass}">
@@ -192,7 +194,7 @@
 	<joint name="joint_4" type="revolute">
 		<parent link="J3"/>
 		<child link="J4"/>
-		<origin rpy="0.000000 0.000000 0.000000" xyz="-0.012000 0.020000 0.088000" />
+		<origin rpy="0.000000 0.000000 0.000000" xyz="${-0.012000*scale} ${0.020000*scale} ${0.088000*scale}" />
 		<axis xyz="-0.000000 -0.000000 1.000000" />
 		<limit effort="10" lower="-2.96706" upper="2.96706" velocity="0.739146938219599" />
 		<dynamics damping="${joint_damping}" friction="${joint_friction}"/>
@@ -212,13 +214,13 @@
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J5.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J5.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</visual>
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J5.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J5.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</collision>
 		<xacro:inertia_macro radius="0.03" height="0.06" mass="${J5_mass}">
@@ -229,7 +231,7 @@
 	<joint name="joint_5" type="revolute">
 		<parent link="J4"/>
 		<child link="J5"/>
-		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 -0.020000 0.089500" />
+		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 ${-0.020000*scale} ${0.089500*scale}" />
 		<axis xyz="-0.000000 1.000000 -0.000000" />
 		<limit effort="10" lower="-1.658063" upper="2.356194" velocity="0.739146938219599" />
 		<dynamics damping="${joint_damping}" friction="${joint_friction}"/>
@@ -249,13 +251,13 @@
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J6.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J6.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</visual>
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J6.dae" scale="1 1 1"/>
+				<mesh filename="package://denso_cobotta_descriptions/cobotta_description/J6.dae" scale="${scale} ${scale} ${scale}"/>
 			</geometry>
 		</collision>
 		<xacro:inertia_macro radius="0.03" height="0.01" mass="${J6_mass}">
@@ -266,7 +268,7 @@
 	<joint name="joint_6" type="revolute">
 		<parent link="J5"/>
 		<child link="J6"/>
-		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 -0.044500 0.042000" />
+		<origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 ${-0.044500*scale} ${0.042000*scale}" />
 		<axis xyz="-0.000000 -0.000000 1.000000" />
 		<limit effort="10" lower="-2.96706" upper="2.96706" velocity="1.1093312725676" />
 		<dynamics damping="${joint_damping}" friction="${joint_friction}"/>
@@ -283,6 +285,7 @@
 	</transmission>
 
 	<xacro:if value="${gripper_type != 'none'}">
-		<xacro:include filename="$(find denso_cobotta_descriptions)/cobotta_description/${gripper_type}.urdf.xacro" />
+		<xacro:include filename="$(find assembly_urdf_description)/urdf/${gripper_type}.xacro" />
+		<!-- <xacro:include filename="$(find denso_cobotta_descriptions)/cobotta_description/${gripper_type}.urdf.xacro" /> -->
 	</xacro:if>
 </robot>
