@@ -38,7 +38,13 @@
   <!-- Load joint controller configurations to parameter server -->
   <rosparam file="$(find denso_cobotta_descriptions)/cobotta_description/denso_cobotta_control.yaml" command="load" />
   <!-- load the controllers -->
-  <node name="controller_spawner" pkg="controller_manager" ns="/cobotta" type="spawner" args="joint_state_controller arm_controller" respawn="false" output="screen"/>
+  <node args="joint_state_controller 
+              arm_controller 
+              ntlab_gripper/r_hand_rod_a_position_controller
+              ntlab_gripper/r_base_hand_r_position_controller
+              ntlab_gripper/l_base_hand_r_position_controller
+              ntlab_gripper/l_hand_rod_a_position_controller
+              ntlab_gripper/l_finger_roll_position_controller " name="controller_spawner" pkg="controller_manager" ns="/cobotta" type="spawner" respawn="false" output="screen"/>
 
   <!-- Load joint controller configurations for gazebo to parameter server -->
   <rosparam file="$(find denso_cobotta_descriptions)/cobotta_description/gazebo_cobotta_control.yaml" command="load" ns="cobotta"/>

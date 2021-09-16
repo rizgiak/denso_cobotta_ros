@@ -14,6 +14,27 @@ cobotta:
       - joint_6
     constraints:
       stopped_velocity_tolerance: 0  # Override default
+  ntlab_gripper:
+    r_hand_rod_a_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: r_hand_rod_a
+      pid: {p: 100.0, i: 0.0, d: 10.0}
+    r_base_hand_r_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: r_base_hand_r
+      pid: {p: 100.0, i: 0.0, d: 10.0}
+    l_base_hand_r_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: l_base_hand_r
+      pid: {p: 100.0, i: 0.0, d: 10.0}
+    l_hand_rod_a_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: l_hand_rod_a
+      pid: {p: 100.0, i: 0.0, d: 10.0}
+    l_finger_roll_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: l_finger_roll
+      pid: {p: 10.0, i: 0.0, d: 1.0}
   gazebo_ros_control:
     pid_gains:
       joint_1: {p: 100.0, i: 0.0, d: 0.0, i_clamp: 0}
