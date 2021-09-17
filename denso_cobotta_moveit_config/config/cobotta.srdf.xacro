@@ -32,6 +32,10 @@
         <joint name="joint_6" />
     </group>
 
+    <xacro:if value="${gripper_type == 'gripper_ntlab'}">
+        <xacro:include filename="$(find denso_cobotta_moveit_config)/config/gripper_ntlab.srdf.xacro" />
+    </xacro:if>
+
     <xacro:if value="${gripper_type == 'parallel'}">
         <xacro:include filename="$(find denso_cobotta_moveit_config)/config/parallel.srdf.xacro" />
     </xacro:if>

@@ -6,17 +6,17 @@
 	<!-- Parameters for gazebo simulation.
 		NOTE: These are roughly estimated values.
 	-->
-
+	<xacro:property name="mass_adjust" value="1" /> 
 	<xacro:property name="scale" value ="0.8" />
 	<xacro:property name="joint_damping" value="0.001" />
 	<xacro:property name="joint_friction" value="0.61" />
 	<xacro:property name="base_mass" value="1.4" />
-	<xacro:property name="J1_mass" value="1.29" />
-	<xacro:property name="J2_mass" value="0.39" />
-	<xacro:property name="J3_mass" value="0.35" />
-	<xacro:property name="J4_mass" value="0.35" />
-	<xacro:property name="J5_mass" value="0.19" />
-	<xacro:property name="J6_mass" value="0.03" />
+	<xacro:property name="J1_mass" value="${1.29*mass_adjust}" />
+	<xacro:property name="J2_mass" value="${0.39*mass_adjust}" />
+	<xacro:property name="J3_mass" value="${0.35*mass_adjust}" />
+	<xacro:property name="J4_mass" value="${0.35*mass_adjust}" />
+	<xacro:property name="J5_mass" value="${0.19*mass_adjust}" />
+	<xacro:property name="J6_mass" value="${0.03*mass_adjust}" />
 
 	<!-- Macro for calculating inertial matrix-->
 	<xacro:macro name="inertia_macro" params="radius height mass *origin">
@@ -285,7 +285,7 @@
 	</transmission>
 
 	<xacro:if value="${gripper_type != 'none'}">
-		<xacro:include filename="$(find assembly_urdf_description)/urdf/${gripper_type}.xacro" />
+		<xacro:include filename="$(find gripper_ntlab_description)/urdf/${gripper_type}.xacro" />
 		<!-- <xacro:include filename="$(find denso_cobotta_descriptions)/cobotta_description/${gripper_type}.urdf.xacro" /> -->
 	</xacro:if>
 </robot>

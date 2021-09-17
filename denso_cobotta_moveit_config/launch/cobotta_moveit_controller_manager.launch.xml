@@ -13,8 +13,12 @@
   <!-- Set the param listing controllers.
     NOTE: We switch the controller depending on the use of parallel gripper.
   -->
-  <group if="$(eval arg('gripper_type') == 'parallel')">
+  <!-- <group if="$(eval arg('gripper_type') == 'parallel')">
       <rosparam file="$(find denso_cobotta_moveit_config)/config/controllers_with_parallel.yaml" />
+  </group> -->
+  
+  <group if="$(eval arg('gripper_type') == 'gripper_ntlab')">
+      <rosparam file="$(find denso_cobotta_moveit_config)/config/controllers_with_gripper_ntlab.yaml" />
   </group>
 
   <group unless="$(eval arg('gripper_type') == 'parallel')">
