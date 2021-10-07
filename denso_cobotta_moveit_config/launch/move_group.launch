@@ -40,7 +40,7 @@
 
   <!-- Start the actual move_group node/action server -->
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" 
-	args="joint_states:=/cobotta/joint_states $(arg command_args)">
+	args="joint_states:=/cobotta/all_joint_states $(arg command_args)">
     <!-- Set the display variable, in case OpenGL code is used internally -->
     <env name="DISPLAY" value="$(optenv DISPLAY :0)" />
 
@@ -58,7 +58,7 @@
   <!-- Run the joint_state_publisher for listening joint_state topic. -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="publish_frequency" type="double" value="125.0" />
-    <rosparam param="source_list">[/cobotta/joint_states]</rosparam>
+    <rosparam param="source_list">[/cobotta/all_joint_states]</rosparam>
   </node>
 
 </launch>

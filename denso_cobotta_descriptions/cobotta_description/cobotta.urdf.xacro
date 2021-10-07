@@ -285,6 +285,7 @@
 	</transmission>
 
 	<xacro:if value="${gripper_type != 'none'}">
+		<xacro:arg name="base_type" default="cobotta"/>
 		<xacro:include filename="$(find gripper_ntlab_description)/urdf/${gripper_type}.xacro" />
 		<!-- <xacro:include filename="$(find denso_cobotta_descriptions)/cobotta_description/${gripper_type}.urdf.xacro" /> -->
 	</xacro:if>
