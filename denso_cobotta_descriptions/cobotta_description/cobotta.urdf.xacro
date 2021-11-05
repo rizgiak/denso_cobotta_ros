@@ -7,7 +7,7 @@
 		NOTE: These are roughly estimated values.
 	-->
 	<xacro:property name="mass_adjust" value="1" /> 
-	<xacro:property name="scale" value ="0.8" />
+	<xacro:property name="scale" value ="1" />
 	<xacro:property name="joint_damping" value="0.001" />
 	<xacro:property name="joint_friction" value="0.61" />
 	<xacro:property name="base_mass" value="1.4" />
