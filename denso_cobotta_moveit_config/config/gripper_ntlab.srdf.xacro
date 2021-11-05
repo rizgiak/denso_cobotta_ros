@@ -55,6 +55,8 @@
     <disable_collisions link1="J5" link2="gripper_base_link" reason="Default" />
     <disable_collisions link1="J5" link2="l_finger_1" reason="Never" />
     <disable_collisions link1="J5" link2="r_finger_1" reason="Never" />
+    <disable_collisions link1="J5" link2="l_hand_1" reason="Never" />
+    <disable_collisions link1="J5" link2="r_hand_1" reason="Never" />
     <disable_collisions link1="J6" link2="gripper_base_link" reason="Adjacent" />
     <disable_collisions link1="J6" link2="l_finger_1" reason="Never" />
     <disable_collisions link1="J6" link2="r_finger_1" reason="Never" />
