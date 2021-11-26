@@ -76,4 +76,7 @@
     <disable_collisions link1="r_rod_a_1" link2="r_finger_1" reason="Adjacent" />
     <disable_collisions link1="r_rod_b_1" link2="r_finger_1" reason="Adjacent" />
     <disable_collisions link1="r_finger_1" link2="r_roll_1" reason="Default" />
+    <disable_collisions link1="l_finger_1" link2="r_finger_1" reason="Adjacent" />
+    <disable_collisions link1="l_finger_1" link2="r_roll_1" reason="Adjacent" />
+    <disable_collisions link1="l_roll_1" link2="r_roll_1" reason="Adjacent" />
 </robot>
